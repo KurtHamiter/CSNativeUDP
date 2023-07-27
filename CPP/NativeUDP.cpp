@@ -2,8 +2,7 @@
 
 void Initialize() {
     WSADATA wsaData;
-    int     returnValue = WSAStartup(MAKEWORD(2, 2), &wsaData);
-    if (returnValue != 0) { printf("Socket Initialization Error"); }
+    return returnValue = WSAStartup(MAKEWORD(2, 2), &wsaData);
 }
 
 SOCKET CreateSocket(int bufferSize) {
