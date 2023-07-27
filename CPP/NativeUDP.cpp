@@ -55,8 +55,8 @@ int Send(SOCKET netSocket, char* sendBuffer, int sendBufferLength, struct Networ
     int                 ipAddressSize = sizeof(ipAddress);
 
     ipAddress.sin6_family = AF_INET6;
-    ipAddress.sin6_addr = networkAddress->ipv6;
-    ipAddress.sin6_port = networkAddress->port;
+    ipAddress.sin6_addr   = networkAddress->ipv6;
+    ipAddress.sin6_port   = networkAddress->port;
     return sendto(netSocket, sendBuffer, sendBufferLength, 0, (struct sockaddr*)&ipAddress, ipAddressSize);
 }
 
