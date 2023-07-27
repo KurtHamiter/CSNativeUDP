@@ -2,7 +2,7 @@
 
 int Initialize() {
     WSADATA wsaData;
-    return returnValue = WSAStartup(MAKEWORD(2, 2), &wsaData);
+    return WSAStartup(MAKEWORD(2, 2), &wsaData);
 }
 
 SOCKET CreateSocket(int bufferSize) {
