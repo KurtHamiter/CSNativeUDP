@@ -26,7 +26,7 @@ namespace NativeUDP
         public const string dllPath = "NativeUDP.dll";
 
         [DllImport(dllPath, EntryPoint = "Initialize", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Initialize();
+        public static extern int Initialize();
 
         [DllImport(dllPath, EntryPoint = "CreateSocket", CallingConvention = CallingConvention.Cdecl)]
         public static extern NetworkSocket CreateSocket(int bufferSize);
