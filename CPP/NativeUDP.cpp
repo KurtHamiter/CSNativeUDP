@@ -1,6 +1,6 @@
 #include "NativeUDP.h";
 
-void Initialize() {
+int Initialize() {
     WSADATA wsaData;
     return returnValue = WSAStartup(MAKEWORD(2, 2), &wsaData);
 }
