@@ -35,10 +35,10 @@ struct IPv6LocalHost {
 };
 
 extern "C" __declspec(dllexport) SOCKET   CreateSocket(int bufferSize);
-extern "C" __declspec(dllexport) void     Initialize();
 extern "C" __declspec(dllexport) void     SetIP(struct NetworkAddress* networkAddress, char* address);
 extern "C" __declspec(dllexport) void     GetIP(struct NetworkAddress* networkAddress, char* stringBytes, int stringBytesLength);
 extern "C" __declspec(dllexport) void     SetPort(struct NetworkAddress* networkAddress, uint16_t port);
+extern "C" __declspec(dllexport) int      Initialize();
 extern "C" __declspec(dllexport) int      Send(SOCKET netSocket, char* sendBuffer, int sendBufferLength, struct NetworkAddress* networkAddress);
 extern "C" __declspec(dllexport) int      BindSocket(SOCKET netSocket, char* stringAddress, unsigned short port);
 extern "C" __declspec(dllexport) int      SetBlocking(SOCKET netSocket, bool option);
