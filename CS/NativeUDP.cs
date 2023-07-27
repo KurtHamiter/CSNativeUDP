@@ -20,7 +20,7 @@ namespace NativeUDP
         private ushort port;
     }
 
-    static class Program
+    static class UDPSocket
     {
 
         public const string dllPath = "NativeUDP.dll";
