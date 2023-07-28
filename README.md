@@ -13,7 +13,7 @@ Contains IP address and port information when sending and receiving packets over
 
 ## Methods
 `int Initialize()` - 
-Must be called once at the very start of the application. Initializes the underlying winsock library. Do not call this again before de-initializing.
+Must be called once at the start of the application before any usage of the following API. Initializes the underlying winsock library. Do not call this again before de-initializing.
 Returns response code 0 if successful.
 
 `NetworkSocket CreateSocket(int bufferSize)` - 
