@@ -14,17 +14,17 @@ Contains IP address and port information when sending and receiving packets over
 ## Methods
 `int Initialize()` - 
 Must be called once at the very start of the application. Initializes the underlying winsock library. Do not call this again before de-initializing.
-Returns a response code; 0 means successful.
+Returns response code 0 if successful.
 
 `NetworkSocket CreateSocket(int bufferSize)` - 
 Creates a new native socket and returns a handle for referencing it. bufferSize parameter is in bytes.
 
 `int BindSocket(NetworkSocket networkSocket, string ipAddress, ushort port)` - 
 Binds a socket to listen on an IP address and port. ::0 binds to any IP address and should be used by default. Port should be any value between 0 & 65535.
-Returns a response code; 0 means successful.
+Returns response code 0 if successful.
 
 `int SetBlocking(NetworkSocket networkSocket, bool option)` -
-Sets a socket to either blocking or non blocking. Sockets are non blocking by default. Returns a response code; 0 means successful.
+Sets a socket to either blocking or non blocking. Sockets are non blocking by default. Returns response code 0 if successful.
 
 `int Receive(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress senderAddress)` - 
 Receive available packets from the network queue. Writes packet payload to buffer and stores received address info in NetworkAddress struct. 
