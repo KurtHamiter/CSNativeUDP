@@ -26,11 +26,11 @@ Returns response code 0 if successful.
 `int SetBlocking(NetworkSocket networkSocket, bool option)` -
 Sets a socket to either blocking or non blocking. Sockets are non blocking by default. Returns response code 0 if successful.
 
-`int Receive(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress senderAddress)` - 
+`int Receive(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress networkAddress)` - 
 Receive available packets from the network queue. Writes packet payload to buffer and stores received address info in NetworkAddress struct. 
 Returns bytes received. -1 means no packets are available.
 
-`int Send(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress senderAddress)` -
+`int Send(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress networkAddress)` -
 Sends bytes inside writeBuffer to a NetworkAddress. Returns amount of bytes sent.
 
 `void GetIP(ref NetworkAddress networkAddress, byte[] stringBytes, int stringBytesLength)` - Writes ASCII text representation of an IPv4 or IPv6 address into a byte array. This can be converted into a char array or string.
