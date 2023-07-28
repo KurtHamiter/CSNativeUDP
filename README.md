@@ -1,6 +1,6 @@
 # Introduction
 
-This wrapper exists to be a replacement for C# UDP network sockets. Unlike C# sockets, sending and receiving data in this wrapper using pre-allocated buffers does not incur any new heap allocation penalties. All sockets created with this wrapper have dual stack IPV4 & IPV6 functionality by default.
+This wrapper exists to be a replacement for C# UDP network sockets in high performance environments. Unlike C# sockets, sending and receiving data in this wrapper using pre-allocated buffers does not incur any new heap allocation penalties. All sockets created with this wrapper have dual stack IPV4 & IPV6 functionality by default.
 
 # API Documentation
 
