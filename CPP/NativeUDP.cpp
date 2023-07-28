@@ -50,8 +50,8 @@ bool IsIPv4(struct NetworkAddress* networkAddress) {
 }
 
 int Send(SOCKET netSocket, char* sendBuffer, int sendBufferLength, struct NetworkAddress* networkAddress) {
-    struct sockaddr_in6 ipAddress = {};
-    int                 ipAddressSize = sizeof(ipAddress);
+    struct sockaddr_in6 ipAddress     = {};
+           int          ipAddressSize = sizeof(ipAddress);
 
     ipAddress.sin6_family = AF_INET6;
     ipAddress.sin6_addr   = networkAddress->ipv6;
