@@ -24,7 +24,7 @@ Binds a socket to listen on an IP address and port. ::0 binds to any IP address 
 Returns response code 0 if successful.
 
 `int SetBlocking(NetworkSocket networkSocket, bool option)` -
-Sets a socket to either blocking or non blocking. Sockets are non blocking by default. Returns response code 0 if successful.
+Sets a socket to either blocking or non blocking. Returns response code 0 if successful.
 
 `int Receive(NetworkSocket networkSocket, byte[] writeBuffer, int writeBufferLength, ref NetworkAddress networkAddress)` - 
 Receive available packets from the network queue. Writes packet payload to buffer and stores received address info in NetworkAddress struct. 
