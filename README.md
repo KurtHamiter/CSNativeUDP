@@ -47,44 +47,44 @@ Sends bytes inside writeBuffer to a NetworkAddress. Returns amount of bytes sent
 # Client Example
 
 ```
-        static void Main()
-        {
+static void Main()
+{
 
-            UDPSocket.Initialize();
-            NetworkSocket  networkSocket = UDPSocket.CreateSocket(16 * 1024);
-            NetworkAddress hostAddress   = default;
-            UDPSocket.SetBlocking(networkSocket, true);
-            UDPSocket.SetIP(ref hostAddress, "127.0.0.1");
-            UDPSocket.SetPort(ref hostAddress, 27016);
+        UDPSocket.Initialize();
+        NetworkSocket  networkSocket = UDPSocket.CreateSocket(16 * 1024);
+        NetworkAddress hostAddress   = default;
+        UDPSocket.SetBlocking(networkSocket, true);
+        UDPSocket.SetIP(ref hostAddress, "127.0.0.1");
+        UDPSocket.SetPort(ref hostAddress, 27016);
 
-            byte[] writeBuffer = Encoding.ASCII.GetBytes("My Payload");
-            UDPSocket.Send(networkSocket, writeBuffer, writeBuffer.Length, ref hostAddress);
+        byte[] writeBuffer = Encoding.ASCII.GetBytes("My Payload");
+        UDPSocket.Send(networkSocket, writeBuffer, writeBuffer.Length, ref hostAddress);
 
-            NetworkAddress recvAddress = default;
-            byte[] receiveBuffer = new byte[1024];
-            UDPSocket.Receive(networkSocket, receiveBuffer, 1024, ref recvAddress);
+        NetworkAddress recvAddress = default;
+        byte[] receiveBuffer = new byte[1024];
+        UDPSocket.Receive(networkSocket, receiveBuffer, 1024, ref recvAddress);
 
-        }
+}
 ```
 
 # Server Example
 ```
-        static void Main()
-        {
+static void Main()
+{
 
-            UDPSocket.Initialize();
-            NetworkSocket networkSocket = UDPSocket.CreateSocket(16 * 1024);
-            UDPSocket.SetBlocking(networkSocket, true);
-            UDPSocket.BindSocket(networkSocket, "::0", 27016);
+        UDPSocket.Initialize();
+        NetworkSocket networkSocket = UDPSocket.CreateSocket(16 * 1024);
+        UDPSocket.SetBlocking(networkSocket, true);
+        UDPSocket.BindSocket(networkSocket, "::0", 27016);
 
-            NetworkAddress recvAddress = default;
-            byte[] receiveBuffer = new byte[1024];
-            UDPSocket.Receive(networkSocket, receiveBuffer, 1024, ref recvAddress);
+        NetworkAddress recvAddress = default;
+        byte[] receiveBuffer = new byte[1024];
+        UDPSocket.Receive(networkSocket, receiveBuffer, 1024, ref recvAddress);
 
-            byte[] writeBuffer = Encoding.ASCII.GetBytes("My Response");
-            UDPSocket.Send(networkSocket, writeBuffer, writeBuffer.Length, ref recvAddress);
+        byte[] writeBuffer = Encoding.ASCII.GetBytes("My Response");
+        UDPSocket.Send(networkSocket, writeBuffer, writeBuffer.Length, ref recvAddress);
 
-        }
+}
 ```
 
 
