@@ -21,7 +21,7 @@ Creates a new native socket and returns a handle for referencing it. bufferSize 
 
 `int BindSocket(NetworkSocket networkSocket, string ipAddress, ushort port)` - 
 Binds a socket to listen on an IP address and port. ::0 binds to any IP address and should be used by default. Port should be any value between 0 & 65535.
-Returns response code 0 if successful.
+Returns response code 0 if successful. Only required for server instances.
 
 `int SetBlocking(NetworkSocket networkSocket, bool option)` -
 Sets a socket to either blocking or non blocking. Returns response code 0 if successful.
